@@ -22,3 +22,10 @@ header{
 .chat_message_global {
     width: 65%;
 }
+.avatar > img {
+    width: 80px;
+    aspect-ratio: 1 / 1;
+}
+.info_profile > h4 {
+margin: 0.5rem 0 0;
+}
