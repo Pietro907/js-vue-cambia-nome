@@ -34,14 +34,22 @@ header{
     border-radius: 50%;
     margin: 0.5rem 0.5rem;
 }
-.info_profile > h4 {
+.info_profile > h4, .info_profile > h5, .info_profile > a {
 margin: 0.5rem 0 0;
 }
+
 .clr_grey {
     background-color: var(--bg-scondary-card)
 }
 
 
+
+
+
+/* Utilities */
 :root {
     --bg-scondary-card: #E8E9EA;
+}
+.pt {
+    padding: 0.1rem 0;
 }
