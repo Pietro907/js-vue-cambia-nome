@@ -28,9 +28,11 @@ header{
     background: url(../img/mine.jpg);
 }
 .avatar > img {
-    width: 80px;
+    height: 65px;
+    width: 70px;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
+    margin: 0.5rem 0.5rem;
 }
 .info_profile > h4 {
 margin: 0.5rem 0 0;
