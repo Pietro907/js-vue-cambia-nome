@@ -70,5 +70,5 @@ margin: 0.5rem 0 0;
     background-color: var(--bg-new-mess);
 }
 .bg_light_grey {
-    background: var(--bg-secondary-card);
+    background: rgba(238, 237, 237, 0.836);
 }
