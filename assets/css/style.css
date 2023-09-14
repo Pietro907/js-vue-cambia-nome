@@ -17,7 +17,7 @@ header{
     position: absolute;
     top: 40px;
     left: 100px;
-    border: 1px solid var(--bg-scondary-card);
+    border: 1px solid var(--bg-secondary-card);
 }
 .contact {
     width: 35%;
@@ -39,21 +39,28 @@ header{
 .info_profile > h4, .info_profile > h5, .info_profile > a {
 margin: 0.5rem 0 0;
 }
+.info_profile > p, .time > p {
+    color: var(--bg-secondary-card);
+}
 
 .clr_grey {
-    background-color: var(--bg-scondary-card)
+    background-color: var(--bg-secondary-card)
 }
 .chat_old {
     height: 750px;
     overflow-x: hidden;
 }
-
+.time {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
 
 
 
 /* Utilities */
 :root {
-    --bg-scondary-card: #E8E9EA;
+    --bg-secondary-card: #C5C5C0;
     --bg-new-mess: #EEEEDD;
 }
 .pt {
@@ -61,4 +68,7 @@ margin: 0.5rem 0 0;
 }
 .bg_new_mess {
     background-color: var(--bg-new-mess);
+}
+.bg_light_grey {
+    background: var(--bg-secondary-card);
 }
