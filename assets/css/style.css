@@ -10,22 +10,36 @@ header{
     background-color: aquamarine;
     height: 150px;
 }
-.container{
+.main_container{
+
+    background-color: #ffffff;
     height: 800px;
     position: absolute;
     top: 80px;
     left: 100px;
+    border: 1px solid var(--bg-scondary-card);
 }
 .contact {
     width: 35%;
+    margin-left: 0;
 }
 .chat_message_global {
     width: 65%;
+    background: url(../img/mine.jpg);
 }
 .avatar > img {
     width: 80px;
     aspect-ratio: 1 / 1;
+    border-radius: 50%;
 }
 .info_profile > h4 {
 margin: 0.5rem 0 0;
+}
+.clr_grey {
+    background-color: var(--bg-scondary-card)
+}
+
+
+:root {
+    --bg-scondary-card: #E8E9EA;
 }
