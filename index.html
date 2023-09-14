@@ -18,9 +18,13 @@
     <header></header>
 
     <main>
+        <!-- Main container, contiene tutta la chat -->
         <div class="container main_container d-flex p-0">
+
+            <!-- lato sinistro del container contenente tutte le chat, notifiche e barra di ricerca -->
             <div class="contact bg-lighter">
 
+                <!-- User utente -->
                 <div class="card d-flex flex-row border-dark-subtle rounded-0 clr_grey">
                     <div class="avatar">
                         <img src="./assets/img/avatar_1.jpg" alt="">
@@ -31,115 +35,117 @@
                             <h4 class="ps-1">Nome</h4>
                         </div>
                         <div class="icon pe-3 text-secondary">
-                            <i class="fa-solid fa-circle-notch px-1"></i>
-                            <i class="fa-solid fa-message px-1"></i>
-                            <i class="fa-solid fa-ellipsis-vertical px-1"></i>
+                            <a href="#" class="text-secondary text-decoration-none">
+                                <i class="fa-solid fa-circle-notch px-1"></i>
+                            </a>
+                            <a href="#" class="text-secondary text-decoration-none">
+                                <i class="fa-solid fa-message px-1"></i>
+                            </a>
+                            <a href="#" class="text-secondary text-decoration-none">
+                                <i class="fa-solid fa-ellipsis-vertical px-1"></i>
+                            </a>                                                       
                         </div>
                     </div>
                 </div>
 
+                <!-- Ricevi notifiche di nuovi messaggi -->
                 <div class="card d-flex flex-row border-light-subtle rounded-0 bg-info">
                     <div class="avatar bg-secondary-subtle text-info rounded-5 pt my-3 mx-2 ">
                         <i class="fa-solid fa-bell-slash avatar text-info text-center p-2"></i>
                     </div>
                     <div class="info_profile rounded_icon">
-                        <h5>Ricevi notifiche</h5>
-                        <a href="#">Attiva notifiche desktop</a>
+                        <h5>Ricevi notifiche di nuovi messaggi</h5>
+                        <a href="#" class="text-secondary">Attiva notifiche desktop</a>
                     </div>
                 </div>
 
+                <!-- Barra di ricerca delle chat -->
                 <div class="card d-flex flex-row align-items-center">
-                    <div class="p-2 text-secondary">
-                        <i class="fa-solid fa-magnifying-glass px-1"></i>
+                    <div class="p-1 text-secondary">
+                        <a href="#" class="text-secondary text-decoration-none">
+                            <i class="fa-solid fa-magnifying-glass ps-1"></i>
+                        </a>
                     </div>
 
-                    <div class="p-2 w-100">
+                    <div class="p-1 w-100">
                         <input type="text" class="form-control text-center" id="exampleFormControlInput1" placeholder="Cerca o inizia una nuova chat">
                     </div>
 
                 </div>
                 
-                  
-                <div class="row">
-                    <div class="col">
-
-                        <div class="card d-flex flex-row border-light-subtle rounded-0">
-                            <div class="avatar">
-                                <img src="./assets/img/avatar_1.jpg" alt="">
-                            </div>
-                            <div class="info_profile">
-                                <h4>Nome</h4>
-                                <p>Message</p>
-                            </div>
-                        </div>
-
-                        <div class="card d-flex flex-row border-light-subtle rounded-0">
-                            <div class="avatar">
-                                <img src="./assets/img/avatar_1.jpg" alt="">
-                            </div>
-                            <div class="info_profile">
-                                <h4>Nome</h4>
-                                <p>Message</p>
-                            </div>
-                        </div>
-
-                        <div class="card d-flex flex-row border-light-subtle rounded-0">
-                            <div class="avatar">
-                                <img src="./assets/img/avatar_1.jpg" alt="">
-                            </div>
-                            <div class="info_profile">
-                                <h4>Nome</h4>
-                                <p>Message</p>
-                            </div>
-                        </div>
-
-                        <div class="card d-flex flex-row border-light-subtle rounded-0">
-                            <div class="avatar">
-                                <img src="./assets/img/avatar_1.jpg" alt="">
-                            </div>
-                            <div class="info_profile">
-                                <h4>Nome</h4>
-                                <p>Message</p>
-                            </div>
-                        </div>
-
-                        <div class="card d-flex flex-row border-light-subtle rounded-0">
-                            <div class="avatar">
-                                <img src="./assets/img/avatar_1.jpg" alt="">
-                            </div>
-                            <div class="info_profile">
-                                <h4>Nome</h4>
-                                <p>Message</p>
-                            </div>
-                        </div>
-
-                        <div class="card d-flex flex-row border-light-subtle rounded-0">
-                            <div class="avatar">
-                                <img src="./assets/img/avatar_1.jpg" alt="">
-                            </div>
-                            <div class="info_profile">
-                                <h4>Nome</h4>
-                                <p>Message</p>
-                            </div>
-                        </div>
-
-                        <div class="card d-flex flex-row border-light-subtle rounded-0">
-                            <div class="avatar">
-                                <img src="./assets/img/avatar_1.jpg" alt="">
-                            </div>
-                            <div class="info_profile">
-                                <h4>Nome</h4>
-                                <p>Message</p>
-                            </div>
-                        </div>
-                        
-                    </div>
-
-                </div>
+                  <!-- Qui ci sono tutte le chat vecchie? -->
+                  <div class="chat_old">
+                      <div class="row">
+                          <div class="col">
+      
+                              <div class="card d-flex flex-row border-light-subtle rounded-0">
+                                  <div class="avatar">
+                                      <img src="./assets/img/avatar_1.jpg" alt="">
+                                  </div>
+                                  <div class="info_profile">
+                                      <h4>Nome</h4>
+                                      <p>Message</p>
+                                  </div>
+                              </div>
+                              
+                              <div class="card d-flex flex-row border-light-subtle rounded-0">
+                                  <div class="avatar">
+                                      <img src="./assets/img/avatar_1.jpg" alt="">
+                                  </div>
+                                  <div class="info_profile">
+                                      <h4>Nome</h4>
+                                      <p>Message</p>
+                                  </div>
+                              </div>
+      
+                              <div class="card d-flex flex-row border-light-subtle rounded-0">
+                                  <div class="avatar">
+                                      <img src="./assets/img/avatar_1.jpg" alt="">
+                                  </div>
+                                  <div class="info_profile">
+                                      <h4>Nome</h4>
+                                      <p>Message</p>
+                                  </div>
+                              </div>
+      
+                              <div class="card d-flex flex-row border-light-subtle rounded-0">
+                                  <div class="avatar">
+                                      <img src="./assets/img/avatar_1.jpg" alt="">
+                                  </div>
+                                  <div class="info_profile">
+                                      <h4>Nome</h4>
+                                      <p>Message</p>
+                                  </div>
+                              </div>
+      
+                              <div class="card d-flex flex-row border-light-subtle rounded-0">
+                                  <div class="avatar">
+                                      <img src="./assets/img/avatar_1.jpg" alt="">
+                                  </div>
+                                  <div class="info_profile">
+                                      <h4>Nome</h4>
+                                      <p>Message</p>
+                                  </div>
+                              </div>
+      
+                              <div class="card d-flex flex-row border-light-subtle rounded-0">
+                                  <div class="avatar">
+                                      <img src="./assets/img/avatar_1.jpg" alt="">
+                                  </div>
+                                  <div class="info_profile">
+                                      <h4>Nome</h4>
+                                      <p>Message</p>
+                                  </div>
+                              </div>
+                          </div>
+      
+                      </div>
+                  </div>
 
             </div>
 
-            <div class="chat_message_global bg-success text-start ">
+            <!-- Qui visualizzeremo la chat selezionata -->
+            <div class="chat_message_global bg-success text-start d-flex flex-column justify-content-between ">
                 <div class="card d-flex flex-row border-dark-subtle rounded-0 clr_grey">
                     <div class="avatar">
                         <img src="./assets/img/avatar_1.jpg" alt="">
@@ -149,10 +155,28 @@
                             <h4 class="ps-1">Nome</h4>
                         </div>
                         <div class="icon pe-3 text-secondary">
-                            <i class="fa-solid fa-magnifying-glass px-1"></i>
-                            <i class="fa-solid fa-paperclip px-1"></i>
-                            <i class="fa-solid fa-ellipsis-vertical px-1"></i>
+                            <a href="#" class="text-secondary text-decoration-none">
+                                <i class="fa-solid fa-magnifying-glass px-1"></i>
+                            </a>
+                            <a href="#" class="text-secondary text-decoration-none">
+                                <i class="fa-solid fa-paperclip px-1"></i>                               
+                            </a>
+                            <a href="#" class="text-secondary text-decoration-none">
+                                <i class="fa-solid fa-ellipsis-vertical px-1"></i>
+                            </a>
                         </div>
+                    </div>
+                </div>
+
+                <div class="card d-flex flex-row align-items-center">
+                    <div class="p-1 text-secondary">
+                        <a href="#" class="text-secondary text-decoration-none">
+                            <i class="fa-regular fa-face-smile ps-1"></i>
+                        </a>
+                    </div>
+
+                    <div class="p-1 w-100">
+                        <input type="text" class="form-control text-start" id="exampleFormControlInput1" placeholder="Invia un messaggio">
                     </div>
                 </div>
             </div>

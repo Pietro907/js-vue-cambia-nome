@@ -15,16 +15,18 @@ header{
     background-color: #ffffff;
     height: 800px;
     position: absolute;
-    top: 80px;
+    top: 40px;
     left: 100px;
     border: 1px solid var(--bg-scondary-card);
 }
 .contact {
     width: 35%;
+    height: 100%;
     margin-left: 0;
 }
 .chat_message_global {
     width: 65%;
+    height: 100%;
     background: url(../img/mine.jpg);
 }
 .avatar > img {
@@ -41,7 +43,10 @@ margin: 0.5rem 0 0;
 .clr_grey {
     background-color: var(--bg-scondary-card)
 }
-
+.chat_old {
+    height: 750px;
+    overflow-x: hidden;
+}
 
 
 
