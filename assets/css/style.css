@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+}
+header{
+    background-color: aquamarine;
+    height: 150px;
+}
+.container{
+    height: 800px;
+    position: absolute;
+    top: 80px;
+    left: 100px;
+}
+.contact {
+    width: 35%;
+}
+.chat_message_global {
+    width: 65%;
+}
