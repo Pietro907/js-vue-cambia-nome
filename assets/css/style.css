@@ -54,7 +54,11 @@ margin: 0.5rem 0 0;
 /* Utilities */
 :root {
     --bg-scondary-card: #E8E9EA;
+    --bg-new-mess: #EEEEDD;
 }
 .pt {
     padding: 0.1rem 0;
+}
+.bg_new_mess {
+    background-color: var(--bg-new-mess);
 }
