@@ -4,7 +4,9 @@
     box-sizing: border-box;
 }
 body{
+    background-color: linear-gradient(to bottom, acquamarine 0);
     position: relative;
+    overflow: hidden;
 }
 header{
     background-color: aquamarine;
@@ -55,6 +57,9 @@ margin: 0.5rem 0 0;
     top: 5px;
     right: 10px;
 }
+
+
+
 
 
 
