@@ -199,11 +199,5 @@ createApp({
             ]
         }
     },
-    methods: {
-        messaggioSingolo(messages) {
-            if (messages.length > 0) {
-                return messages[0].message
-            }
-        }
-    }
+    
 }).mount('#app');
