@@ -27,7 +27,7 @@
                 <!-- User utente -->
                 <div class="card d-flex flex-row border-dark-subtle rounded-0 bg_light_grey">
                     <div class="avatar">
-                        <img v-bind:src="                                                                                                                                       ">
+                        <img src="./assets/img/avatar_io.jpg">    
                     </div>
 
                     <!-- User select -->
@@ -80,22 +80,23 @@
                   <!-- Qui ci sono tutte le chat vecchie? -->
                   <div class="chat_old">
                       <div class="row">
-                          <div v-for="" class="col">
+                          <div class="col">
+
                             <!-- Chat -->
-                              <div class="card d-flex flex-row border-light-subtle rounded-0">
+                              <div @click="activeContact" :class="index === activeContact ? 'active' : ''" v-for="(contact, index) in contacts" class="card d-flex flex-row border-light-subtle rounded-0">
                                   <div class="avatar">
-                                      <img src="./assets/img/avatar_1.jpg" alt="">
+                                      <img :src="`./assets/img/avatar${contact.avatar}.jpg`" alt="">
                                   </div>
                                   <div class="info_profile">
-                                      <h4>Nome</h4>
-                                      <p>Message</p>
+                                      <h4>{{contact.name}}</h4>
+                                      <p>Ultimo messaggio ricevuto</p>
                                   </div>
                                   <div class="time justify-content-end">
                                     <p>orario</p>
                                   </div>
                               </div>
                               
-                              <div class="card d-flex flex-row border-light-subtle rounded-0">
+                              <!-- <div class="card d-flex flex-row border-light-subtle rounded-0">
                                   <div class="avatar">
                                       <img src="./assets/img/avatar_1.jpg" alt="">
                                   </div>
@@ -158,7 +159,7 @@
                                   <div class="time justify-content-end">
                                     <p>orario</p>
                                   </div>
-                              </div>
+                              </div> -->
                           </div>
       
                       </div>

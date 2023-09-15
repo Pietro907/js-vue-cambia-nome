@@ -26,14 +26,17 @@ createApp({
             me: {
                 name: 'Sofia',
                 avatar: './img/avatar_io.png',
-                message: 'ciao'
             },
+            activeContact: 0,
             //contacts 
             //usare .forEach()?
             contacts: [
                 {
                     name: 'Michele',
-                    avatar: './img/avatar_1.png',
+                    //Inserisco il percorso dell'img nel html
+                    //Qui inserisco solo la parte finale dell'img
+                    //e si collega
+                    avatar: '_1',
                     visible: true,
                     messages: [
                         {
@@ -55,7 +58,7 @@ createApp({
                 },
                 {
                     name: 'Fabio',
-                    avatar: './img/avatar_2.png',
+                    avatar: '_2',
                     visible: true,
                     messages: [
                         {
@@ -77,7 +80,7 @@ createApp({
                 },
                 {
                     name: 'Samuele',
-                    avatar: './img/avatar_3.png',
+                    avatar: '_3',
                     visible: true,
                     messages: [
                         {
@@ -99,7 +102,7 @@ createApp({
                 },
                 {
                     name: 'Alessandro B.',
-                    avatar: './img/avatar_4.png',
+                    avatar: '_4',
                     visible: true,
                     messages: [
                         {
@@ -116,7 +119,7 @@ createApp({
                 },
                 {
                     name: 'Alessandro L.',
-                    avatar: './img/avatar_5.png',
+                    avatar: '_5',
                     visible: true,
                     messages: [
                         {
@@ -133,7 +136,7 @@ createApp({
                 },
                 {
                     name: 'Claudia',
-                    avatar: './img/avatar_5.png',
+                    avatar: '_6',
                     visible: true,
                     messages: [
                         {
@@ -155,7 +158,7 @@ createApp({
                 },
                 {
                     name: 'Federico',
-                    avatar: './img/avatar_7.png',
+                    avatar: '_7',
                     visible: true,
                     messages: [
                         {
@@ -172,7 +175,7 @@ createApp({
                 },
                 {
                     name: 'Davide',
-                    avatar: './img/avatar_8.png',
+                    avatar: '_8',
                     visible: true,
                     messages: [
                         {

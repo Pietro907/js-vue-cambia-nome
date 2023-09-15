@@ -8,6 +8,10 @@ body{
     position: relative;
     overflow: hidden;
 }
+/* height per la nostra app */
+#app{
+    height: 100vh;
+}
 header{
     background-color: aquamarine;
     height: 150px;
@@ -15,7 +19,6 @@ header{
 .main_container{
 
     background-color: #ffffff;
-    height: 800px;
     position: absolute;
     top: 40px;
     left: 100px;
@@ -28,8 +31,11 @@ header{
 }
 .chat_message_global {
     width: 65%;
-    height: 100%;
     background: url(../img/mine.jpg);
+}
+/* classe contatto selezionato */
+.active {
+    background: gray;
 }
 .avatar > img {
     height: 65px;
