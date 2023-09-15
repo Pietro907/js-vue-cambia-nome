@@ -27,7 +27,7 @@
                 <!-- User utente -->
                 <div class="card d-flex flex-row border-dark-subtle rounded-0 bg_light_grey">
                     <div class="avatar">
-                        <img src="./assets/img/avatar_io.jpg">    
+                        <img :src="me.avatar">    
                     </div>
 
                     <!-- User select -->
@@ -83,7 +83,7 @@
                           <div class="col">
 
                             <!-- Chat -->
-                              <div @click="activeContact" :class="index === activeContact ? 'active' : ''" v-for="(contact, index) in contacts" class="card d-flex flex-row border-light-subtle rounded-0">
+                              <div @click="activeContact = index" :class="index === activeContact ? 'active' : ''" v-for="(contact, index) in contacts" class="card d-flex flex-row border-light-subtle rounded-0">
                                   <div class="avatar">
                                       <img :src="`./assets/img/avatar${contact.avatar}.jpg`" alt="">
                                   </div>
@@ -195,11 +195,11 @@
                 <!-- Chat -->
                 <div class="message d-flex flex-column">
                     <div class="sent align-self-start">
-                        Lorem ipsum dolor sit amet 
+                        
                     </div>
                 </div>
-                <div class="recive flex-column align-self-end">
-                    Lorem, ipsum dolor sit amet consectetur  
+                <div v-for="(contact, index) in contacts[activeContact].messages" class="recive flex-column align-self-end">
+                   <p>{{contact.message}}</p> 
                 </div>
                 
                 <div class="card d-flex flex-row align-items-center bg_new_mess">
@@ -219,7 +219,6 @@
         </div>
     
     </div>
-
 
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

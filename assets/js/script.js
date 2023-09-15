@@ -23,16 +23,16 @@ createApp({
     data() {
         return {
             //user contact
+            activeContact: 0,
             me: {
                 name: 'Sofia',
-                avatar: './img/avatar_io.png',
+                avatar: './assets/img/avatar_io.jpg',
             },
-            activeContact: 0,
             //contacts 
             //usare .forEach()?
             contacts: [
                 {
-                    name: 'Michele',
+                    name: 'Michele',  //contacts.name
                     //Inserisco il percorso dell'img nel html
                     //Qui inserisco solo la parte finale dell'img
                     //e si collega
@@ -197,6 +197,13 @@ createApp({
                 }
             
             ]
+        }
+    },
+    methods: {
+        messaggioSingolo(messages) {
+            if (messages.length > 0) {
+                return messages[0].message
+            }
         }
     }
 }).mount('#app');
