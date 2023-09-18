@@ -173,9 +173,10 @@
                     <div class="avatar">
                         <img src="./assets/img/avatar_1.jpg" alt="">
                     </div>
+                    <!-- chat activeContact (selezionata) -->
                     <div class="profile w-100 d-flex justify-content-between align-items-center">
-                        <div class="info_profile">
-                            <h4 class="ps-1">Nome</h4>
+                        <div :class="info_profile" >
+                            <h4 class="ps-1">{{activeContact}}</h4>
                             <p class="ps-1 text-dark-emphasis">Message</p>
                         </div>
                         <div class="icon pe-3 text-secondary">
@@ -193,13 +194,27 @@
                 </div>
                 
                 <!-- Chat -->
-                <div class="message d-flex flex-column">
-                    <div class="sent align-self-start">
-                        
+                <div class="mess_sent d-flex flex-column">
+
+                    <div class="align-self-start">
+                       
+                        <div class="sent">
+                            {{newMessage.text}}
+                            <i class="fa-solid fa-trash"
+                            @click="deleteNewMessage(i)"
+                            ></i>
+                        </div>
+
                     </div>
+
                 </div>
-                <div v-for="(contact, index) in contacts[activeContact].messages" class="recive flex-column align-self-end">
+
+                <div class="received flex-column align-self-end" 
+                    v-for="(contact, index) in contacts[activeContact].messages">
                    <p>{{contact.message}}</p> 
+                   <div class="counter"><!-- {{count}} --></div>
+                   <!-- <button v-on:click="aumentaCount">+</button>
+                   <button v-on:click="diminuisceCount">-</button> -->
                 </div>
                 
                 <div class="card d-flex flex-row align-items-center bg_new_mess">
@@ -211,7 +226,7 @@
                    
                     <!-- Barra inserisci nouvo messaggio -->
                     <div class="p-1 w-100">
-                        <input type="text" class="form-control text-start" id="exampleFormControlInput1" placeholder="Invia un messaggio">
+                        <input  v-model="newMessage.text" type="text" class="form-control text-start" id="exampleFormControlInput1" placeholder="Invia un messaggio">
                     </div>
                 </div>
             </div>

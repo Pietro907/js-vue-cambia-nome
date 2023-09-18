@@ -63,8 +63,20 @@ margin: 0.5rem 0 0;
     top: 5px;
     right: 10px;
 }
-
-
+.received {
+    background-color: rgba(165, 244, 149, 0.76);
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 0 1rem 0 0;
+    font-size: large;
+}
+.sent {
+    background-color: rgba(254, 250, 250, 0.872);
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 0 0 0 2rem;
+    font-size: large;
+}
 
 
 

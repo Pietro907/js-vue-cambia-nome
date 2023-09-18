@@ -17,11 +17,27 @@ leggete le pagine della documentazione che vi ho indicato oggi in classe.
 */
 
 
+//input text,
+
+//input html ce l'ho, associare input a variabile
+//stampare la variabile in un nuovo create element
+
+
+//premi enter e stampa il messaggio, 
+//creazione di un nuovo thread come messaggio verde
+
+
 
 const { createApp } = Vue;
 createApp({
     data() {
         return {
+            //input
+            count: '10',
+            newMessage: {
+                text: '',
+                status: false,
+            },
             //user contact
             activeContact: 0,
             me: {
@@ -42,17 +58,17 @@ createApp({
                         {
                             date: '10/01/2020 15:30:55',
                             message: 'Hai portato a spasso il cane?',
-                            status: 'sent'
+                            status: true, //sent
                         },
                         {
                             date: '10/01/2020 15:50:00',
                             message: 'Ricordati di stendere i panni',
-                            status: 'sent'
+                            status: true, //sent
                         },
                         {
                             date: '10/01/2020 16:15:22',
                             message: 'Tutto fatto!',
-                            status: 'received'
+                            status: false, //received
                         }
                     ],
                 },
@@ -195,9 +211,24 @@ createApp({
                         }
                     ],
                 }
-            
-            ]
+
+            ],
         }
     },
-    
+    methods:{
+        /* deleteNewMessage(i) {
+            console.log(this.newMessage);
+            
+        },
+        aumentaCount(direction){
+            console.log('aumenta di 1' + direction);
+            this.count++
+        },
+        diminuisceCount(direction){
+            console.log('diminuisce di 1' + direction);
+            this.count--
+        } */
+    }
 }).mount('#app');
+
+
