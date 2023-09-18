@@ -218,7 +218,7 @@ createApp({
 
         
 
-        document.querySelector('.fa')
+        
         inviaMess(){
             if (newMessage.text != '') {
                 const threadEl = document.createElement('div');
