@@ -206,12 +206,10 @@
 
                     <div>
                        
-                        <!-- <div class="sent">
-                            {{newMessage.text}}
-                            <i class="fa-solid fa-trash"
-                            @click="deleteNewMessage(i)"
-                            ></i>
+                       <!--  <div class="sent">
+                            
                         </div> -->
+                        {{newMessage.text}}
 
                     </div>
 
@@ -232,11 +230,11 @@
                    
                     <!-- Barra inserisci nouvo messaggio -->
                     <div class="clr_new_mess p-1 w-100">
-                        <input v-model="newMessage" type="text" class="form-control text-start" id="exampleFormControlInput1" placeholder="Invia un messaggio">
+                        <input v-model="text" type="text" class="form-control text-start" id="exampleFormControlInput1" placeholder="Invia un messaggio">
                     </div>
                     <div class="clr_new_mess p-1 text-secondary">
                         <a href="#" class="clr_new_mess text-secondary text-decoration-none">
-                            <i v-on:click="newMess()" class="clr_new_mess fa-regular fa-regular fa-paper-plane ps-1 pe-1"></i>
+                            <i v-on:click="inviaMess" class="clr_new_mess fa-regular fa-regular fa-paper-plane ps-1 pe-1"></i>
                         </a>
                     </div>
                 </div>

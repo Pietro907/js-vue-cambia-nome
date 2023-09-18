@@ -218,15 +218,23 @@ createApp({
 
         
 
-
-        newMess(){
+        document.querySelector('.fa')
+        inviaMess(){
             if (newMessage.text != '') {
-                const theadEl = document.createElement('div');
-                theadEl.classList.add('sent');
+                const threadEl = document.createElement('div');
+                threadEl.classList.add('sent');
                 const sentEl = document.querySelector('.mess_sent')
-                theadEl.innerHTML = sentEl;
-                sentEl.innerHTML =`${newMessage.text}`;
+                threadEl.innerHTML = sentEl;
+                //sentEl.innerHTML =`${newMessage.text}`;
+
+                const newMessage = {
+                    message: this.text,
+                };
+
+                this.contacts[this.activeContact].messages.push(newMessage);
+
             } else {
+                this.text = "";
                 console.log('qualcosa è andato storto');
             }
         }
