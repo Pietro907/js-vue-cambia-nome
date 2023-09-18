@@ -223,7 +223,7 @@ createApp({
             if (newMessage.text != '') {
                 const threadEl = document.createElement('div');
                 threadEl.classList.add('sent');
-                const sentEl = document.querySelector('.mess_sent')
+                const sentEl = document.querySelector('.form-control')
                 threadEl.innerHTML = sentEl;
             } else {
                 this.text = "";
