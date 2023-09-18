@@ -225,14 +225,6 @@ createApp({
                 threadEl.classList.add('sent');
                 const sentEl = document.querySelector('.mess_sent')
                 threadEl.innerHTML = sentEl;
-                //sentEl.innerHTML =`${newMessage.text}`;
-
-                const newMessage = {
-                    message: this.text,
-                };
-
-                this.contacts[this.activeContact].messages.push(newMessage);
-
             } else {
                 this.text = "";
                 console.log('qualcosa è andato storto');
