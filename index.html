@@ -70,6 +70,7 @@
                         </a>
                     </div>
 
+                    <!-- Barra di ricerca -->
                     <div class="p-1 w-100">
                         <input type="text" class="form-control text-center" id="exampleFormControlInput1" placeholder="Cerca o inizia una nuova chat">
                         
@@ -88,7 +89,7 @@
                                       <img :src="`./assets/img/avatar${contact.avatar}.jpg`" alt="">
                                   </div>
                                   <div class="info_profile">
-                                      <h4>{{contact.name}}</h4>
+                                      <h5>{{contact.name}}</h5>
                                       <p>Ultimo messaggio ricevuto</p>
                                   </div>
                                   <div class="time justify-content-end">
@@ -176,7 +177,7 @@
                     <!-- chat activeContact (selezionata) -->
                     <div class="profile w-100 d-flex justify-content-between align-items-center">
                         <div class="info_profile">
-                            <h4 class="ps-1">{{contacts[activeContact].name}}</h4>
+                            <h5 class="ps-1">{{contacts[activeContact].name}}</h5>
                             <p class="ps-1 text-dark-emphasis">Message</p>
                         </div>
                         <div class="icon pe-3 text-secondary">
@@ -213,23 +214,28 @@
 
                 <!-- Messaggi ricevuti -->
                 <div class="received flex-column" 
-                    v-for="(contact, index) in contacts[activeContact].messages" :class="contact.status == 'sent' ? ['sent', 'align-self-start'] : ['receive', 'align-self-end']">
+                    v-for="(contact, index) in contacts[activeContact].messages" :class="contact.status == 'sent' ? ['sent', 'align-self-start'] : ['received', 'align-self-end']">
                    <p>{{contact.message}}</p> 
                    <div class="counter"><!-- {{count}} --></div>
                    <!-- <button v-on:click="aumentaCount">+</button>
                    <button v-on:click="diminuisceCount">-</button> -->
                 </div>
                 
-                <div class="card d-flex flex-row align-items-center bg_new_mess">
-                    <div class="p-1 text-secondary">
-                        <a href="#" class="text-secondary text-decoration-none">
-                            <i class="fa-regular fa-face-smile ps-1"></i>
+                <div class="card clr_new_mess d-flex flex-row align-items-center">
+                    <div class="clr_new_mess p-1 text-secondary">
+                        <a href="#" class="clr_new_mess text-secondary text-decoration-none">
+                            <i class="clr_new_mess fa-regular fa-face-smile ps-1"></i>
                         </a>
                     </div>
                    
                     <!-- Barra inserisci nouvo messaggio -->
-                    <div class="p-1 w-100">
+                    <div class="clr_new_mess p-1 w-100">
                         <input  v-model="newMessage.text" type="text" class="form-control text-start" id="exampleFormControlInput1" placeholder="Invia un messaggio">
+                    </div>
+                    <div class="clr_new_mess p-1 text-secondary">
+                        <a href="#" class="clr_new_mess text-secondary text-decoration-none">
+                            <i class="clr_new_mess fa-regular fa-regular fa-paper-plane ps-1 pe-1"></i>
+                        </a>
                     </div>
                 </div>
             </div>

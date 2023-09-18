@@ -1,97 +1,126 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     background-color: linear-gradient(to bottom, acquamarine 0);
     position: relative;
     overflow: hidden;
 }
+
 /* height per la nostra app */
-#app{
+#app {
     height: 100vh;
 }
-header{
-    background-color: aquamarine;
+
+header {
+    background-color: var(--bz-dark-green);
     height: 150px;
 }
-.main_container{
 
-    background-color: #ffffff;
+.main_container {
+
+    background-color: var(--bz-gray-light);
     position: absolute;
     top: 40px;
-    left: 100px;
-    border: 1px solid var(--bg-secondary-card);
+    left: 20%;
+    border: 1px solid var(--bz-gray-light);
+
 }
+
 .contact {
     width: 35%;
     height: 100%;
     margin-left: 0;
 }
+
 .chat_message_global {
     width: 65%;
     background: url(../img/mine.jpg);
 }
+
 /* classe contatto selezionato */
 .active {
-    background: gray;
+    background: var(--bz-dark-ligh);
 }
-.avatar > img {
+
+.avatar>img {
     height: 65px;
     width: 70px;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     margin: 0.5rem 0.5rem;
 }
-.info_profile > h4, .info_profile > h5, .info_profile > a {
-margin: 0.5rem 0 0;
+
+.info_profile>h4,
+.info_profile>h5,
+.info_profile>a {
+    margin: 0.5rem 0 0;
 }
-.info_profile > p, .time > p {
-    color: var(--bg-secondary-card);
+
+.info_profile>p,
+.time>p {
+    color: var(--bz-gray);
 }
 
 .clr_grey {
-    background-color: var(--bg-secondary-card)
+    background-color: var(--bz-gray-light)
 }
+
 .chat_old {
     height: 750px;
     overflow-x: hidden;
 }
+
 .time {
     position: absolute;
     top: 5px;
     right: 10px;
 }
+
 .received {
-    background-color: rgba(165, 244, 149, 0.76);
+    background-color:var(--bz-green);
     padding: 2rem;
     border-radius: 10px;
     margin: 0 1rem 0 0;
     font-size: large;
 }
+
 .sent {
-    background-color: rgba(254, 250, 250, 0.872);
+    background-color: var(--bz-sand);
     padding: 2rem;
     border-radius: 10px;
     margin: 0 0 0 2rem;
     font-size: large;
 }
-
+.clr_new_mess {
+    background-color: var(--bz-sand);
+}
 
 
 
 /* Utilities */
 :root {
-    --bg-secondary-card: #C5C5C0;
-    --bg-new-mess: #EEEEDD;
+    
+    --bz-dark-gray: #b1b1b1;
+    --bz-gray: #d9dbd5;
+    --bz-gray-light: #eaebeb;
+    --bz-gray-ligther: #fbfbfa;
+    --bz-white: white;
+    --bz-sand: #f3eeea;
+    --bz-dark: #000;
+    --bz-sky: #8fdafd;
+    --bz-dark-green: #019689;
+    --bz-green: #d5f9ba;
 }
+
 .pt {
     padding: 0.1rem 0;
 }
+
 .bg_new_mess {
     background-color: var(--bg-new-mess);
 }
-.bg_light_grey {
-    background: rgba(238, 237, 237, 0.836);
-}
+
