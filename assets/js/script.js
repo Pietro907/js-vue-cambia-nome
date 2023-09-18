@@ -36,7 +36,6 @@ createApp({
             //count: '10',
             newMessage: {
                 text: '',
-                status: false,
             },
             //user contact
             activeContact: 0,
@@ -58,17 +57,17 @@ createApp({
                         {
                             date: '10/01/2020 15:30:55',
                             message: 'Hai portato a spasso il cane?',
-                            status: true, //sent
+                            status: 'sent', //true
                         },
                         {
                             date: '10/01/2020 15:50:00',
                             message: 'Ricordati di stendere i panni',
-                            status: true, //sent
+                            status: 'sent', //true
                         },
                         {
                             date: '10/01/2020 16:15:22',
                             message: 'Tutto fatto!',
-                            status: false, //received
+                            status: 'received', //false
                         }
                     ],
                 },

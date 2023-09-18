@@ -193,24 +193,27 @@
                     </div>
                 </div>
                 
-                <!-- Chat -->
+                <!-- Chat inviati e ricevuti -->
+
+                <!-- Messaggi inviati -->
                 <div class="mess_sent d-flex flex-column">
 
-                    <div class="align-self-start">
+                    <div>
                        
-                        <div class="sent">
+                        <!-- <div class="sent">
                             {{newMessage.text}}
                             <i class="fa-solid fa-trash"
                             @click="deleteNewMessage(i)"
                             ></i>
-                        </div>
+                        </div> -->
 
                     </div>
 
                 </div>
 
-                <div class="received flex-column align-self-end" 
-                    v-for="(contact, index) in contacts[activeContact].messages">
+                <!-- Messaggi ricevuti -->
+                <div class="received flex-column" 
+                    v-for="(contact, index) in contacts[activeContact].messages" :class="contact.status == 'sent' ? ['sent', 'align-self-start'] : ['receive', 'align-self-end']">
                    <p>{{contact.message}}</p> 
                    <div class="counter"><!-- {{count}} --></div>
                    <!-- <button v-on:click="aumentaCount">+</button>
