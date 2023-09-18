@@ -215,6 +215,22 @@ createApp({
         }
     },
     methods:{
+
+        
+
+
+        newMess(){
+            if (newMessage.text != '') {
+                const theadEl = document.createElement('div');
+                theadEl.classList.add('sent');
+                const sentEl = document.querySelector('.mess_sent')
+                theadEl.innerHTML = sentEl;
+                sentEl.innerHTML =`${newMessage.text}`;
+            } else {
+                console.log('qualcosa è andato storto');
+            }
+        }
+
         /* deleteNewMessage(i) {
             console.log(this.newMessage);
             

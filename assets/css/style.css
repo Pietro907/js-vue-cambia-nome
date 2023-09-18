@@ -6,25 +6,27 @@
 
 body {
     background-color: linear-gradient(to bottom, acquamarine 0);
-    position: relative;
+    
     overflow: hidden;
 }
 
 /* height per la nostra app */
 #app {
     height: 100vh;
+    margin: 0 auto;
+    
 }
 
 header {
     background-color: var(--bz-dark-green);
     height: 150px;
+    position: relative;
 }
 
 .main_container {
-
     background-color: var(--bz-gray-light);
     position: absolute;
-    top: 40px;
+    top: 50px;
     left: 20%;
     border: 1px solid var(--bz-gray-light);
 
@@ -82,17 +84,17 @@ header {
 
 .received {
     background-color: var(--bz-sand);
-    padding: 2rem;
+    padding: 0.5rem 0.5rem 0;
     border-radius: 10px;
-    margin: 0 1rem 0 0;
+    margin: 0 1rem ;
     font-size: large;
 }
 
 .sent {
     background-color:var(--bz-green);
-    padding: 2rem;
+    padding: 0.5rem 0.5rem 0;
     border-radius: 10px;
-    margin: 0 0 0 2rem;
+    margin: 0 1rem;
     font-size: large;
 }
 .clr_new_mess {
