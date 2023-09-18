@@ -33,7 +33,7 @@ createApp({
     data() {
         return {
             //input
-            count: '10',
+            //count: '10',
             newMessage: {
                 text: '',
                 status: false,
