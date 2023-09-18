@@ -221,10 +221,7 @@ createApp({
         
         inviaMess(){
             if (newMessage.text != '') {
-                const threadEl = document.createElement('div');
-                threadEl.classList.add('sent');
-                const sentEl = document.querySelector('.form-control')
-                threadEl.innerHTML = sentEl;
+                console.log('condizione riuscita');
             } else {
                 this.text = "";
                 console.log('qualcosa è andato storto');
