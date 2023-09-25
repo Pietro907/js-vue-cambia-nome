@@ -228,7 +228,7 @@ createApp({
 
         addMessage() {
             const message = {
-                date: new Date().toString(),
+                date: new Date().toDateString(),
                 message: this.newMessage.text,
                 status: 'sent'
             }
@@ -237,7 +237,7 @@ createApp({
 
             //svuota il messaggio
             this.newMessage='';
-            
+
         },
 
        /*  addnewMess() {

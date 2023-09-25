@@ -175,8 +175,8 @@
 
             </div>
 
-            <!-- Qui visualizzeremo la chat selezionata -->
-            <div class="chat_message_global text-start d-flex flex-column justify-content-between ">
+            <div class="chat_select">
+                <!-- Chat selezionata -->
                 <div class="card d-flex flex-row bg_light_grey rounded-0 clr_grey">
                     <div class="avatar">
                         <img :src="`./assets/img/avatar${contacts[activeContact].avatar}.jpg`" alt="">
@@ -200,43 +200,54 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Chat inviati e ricevuti -->
 
-                <!-- Messaggi inviati -->
-                <div class="mess_sent d-flex flex-column">
-
-                    <div v-show="newMessage.new" >
-                        {{newMessage.text}}
+                <!-- Qui visualizzeremo la chat selezionata -->
+                <div class="chat_message_global text-start d-flex flex-column justify-content-between ">
+    
+                    
+                    <!-- Chat inviati e ricevuti -->
+    
+                    <!-- Messaggi inviati -->
+                    <div class="mess_sent d-flex flex-column">
+    
+                        <div v-show="newMessage.new" >
+                            {{newMessage.text}}
+                        </div>
+    
                     </div>
-
+    
+                    <!-- Messaggi ricevuti -->
+                    <div class="received flex-column" 
+                        v-for="(contact, index) in contacts[activeContact].messages" :class="contact.status == 'sent' ? ['sent', 'align-self-start'] : ['received', 'align-self-end']">
+                       <p>{{contact.message}}</p> 
+                       <p>{{contact.date}}</p> 
+                    </div>
+                    
                 </div>
-
-                <!-- Messaggi ricevuti -->
-                <div class="received flex-column" 
-                    v-for="(contact, index) in contacts[activeContact].messages" :class="contact.status == 'sent' ? ['sent', 'align-self-start'] : ['received', 'align-self-end']">
-                   <p>{{contact.message}}</p> 
-                   <p>{{contact.date}}</p> 
-                </div>
-                
+                <!-- Barra inserisci nouvo messaggio -->
                 <div class="card clr_new_mess d-flex flex-row align-items-center">
+
                     <div class="clr_new_mess p-1 text-secondary">
                         <a href="#" class="clr_new_mess text-secondary text-decoration-none">
                             <i class="clr_new_mess fa-regular fa-face-smile ps-4"></i>
                         </a>
                     </div>
                    
-                    <!-- Barra inserisci nouvo messaggio -->
+                    <!-- Input nuovo messaggio con @key.enter -->
                     <div class="clr_new_mess p-1 w-100">
                         <input @keyup.enter="addMessage" v-model="newMessage.text" :class="newMessage.text != '' ? ['text', 'align-self-start'] : ['received', 'align-self-end']" type="text" class="form-control text-start pb-2" id="exampleFormControlInput1" placeholder="Invia un messaggio">
                     </div>
+
+                    <!-- Icona input invia nuovo messaggio -->
                     <div class="clr_new_mess p-1 text-secondary ms-4">
                         <a href="#" class="clr_new_mess text-secondary text-decoration-none">
                             <i @click="addMessage" class="clr_new_mess fa-regular fa-regular fa-paper-plane pe-3"></i>
                         </a>
                     </div>
+
                 </div>
             </div>
+
             
         </div>
     
