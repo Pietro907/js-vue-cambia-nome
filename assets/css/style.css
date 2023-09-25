@@ -6,29 +6,27 @@
 
 body {
     background-color: linear-gradient(to bottom, acquamarine 0);
-    
-    overflow: hidden;
+    overflow: scroll;
 }
 
 /* height per la nostra app */
 #app {
-    height: 100vh;
     margin: 0 auto;
+
     
 }
 
 header {
     background-color: var(--bz-dark-green);
-    height: 150px;
-    position: relative;
+    height: 90px;
 }
 
 .main_container {
     background-color: var(--bz-gray-light);
-    position: absolute;
-    top: 50px;
-    left: 20%;
+    position: relative;
+    top: -50px;
     border: 1px solid var(--bz-gray-light);
+   
 
 }
 
@@ -41,6 +39,8 @@ header {
 .chat_message_global {
     width: 65%;
     background: url(../img/mine.jpg);
+    height: 500px;
+    overflow-x: scroll;
 }
 
 /* classe contatto selezionato */
@@ -49,14 +49,14 @@ header {
 }
 
 .avatar>img {
-    height: 65px;
-    width: 70px;
+    height: 30px;
+    width: 30px;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     margin: 0.5rem 0.5rem;
 }
 
-.info_profile>h4,
+.info_profile>h6,
 .info_profile>h5,
 .info_profile>a {
     margin: 0.5rem 0 0;
@@ -72,7 +72,7 @@ header {
 }
 
 .chat_old {
-    height: 750px;
+    height: 250px;
     overflow-x: hidden;
 }
 
@@ -100,7 +100,9 @@ header {
 .clr_new_mess {
     background-color: var(--bz-sand);
 }
-
+p{
+    font-size: xx-small;
+}
 
 
 /* Utilities */

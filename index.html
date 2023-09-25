@@ -34,7 +34,7 @@
                     <div class="profile w-100 d-flex justify-content-between align-items-center">
                         <div class="info_profile">
                             
-                            <h4 class="ps-1">{{me.name}}</h4>
+                            <h6 class="ps-1">{{me.name}}</h6>
                         </div>
 
                         <div class="icon pe-3 text-secondary">
@@ -57,7 +57,7 @@
                         <i class="fa-solid fa-bell-slash avatar text-info text-center p-2"></i>
                     </div>
                     <div class="info_profile rounded_icon">
-                        <h5>Ricevi notifiche di nuovi messaggi</h5>
+                        <h6>Ricevi notifiche di nuovi messaggi</h6>
                         <a href="#" class="text-secondary">Attiva notifiche desktop</a>
                     </div>
                 </div>
@@ -75,7 +75,8 @@
                                     <i class="fa-solid fa-magnifying-glass ps-1"></i>
                                 </a>
                             </span>
-                            <input type="text" class="form-control text-center border-start-0" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
+                            
+                            <input v-model="searchContact" type="search" class="form-control text-center border-start-0" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
                           </div>
                         
                         
@@ -89,12 +90,13 @@
                           <div class="col">
 
                             <!-- Chat -->
-                              <div @click="activeContact = index" :class="index === activeContact ? 'active' : ''" v-for="(contact, index) in contacts" class="card d-flex flex-row border-light-subtle rounded-0">
+                            <!-- si poteva fare anche v-for="message in contacts[activeContact].messages" -->
+                              <div @click="activeContact = index" :class="index === activeContact ? 'active' : ''" v-for="(contact, index) in contacts" class="card d-flex flex-row border-light-subtle rounded-0" v-show="contact.visible">
                                   <div class="avatar">
                                       <img :src="`./assets/img/avatar${contact.avatar}.jpg`" alt="">
                                   </div>
                                   <div class="info_profile">
-                                      <h5>{{contact.name}}</h5>
+                                      <h6>{{contact.name}}</h6>
                                       <p>Ultimo messaggio inviato</p>
                                   </div>
                                   <div class="time justify-content-end">
@@ -107,7 +109,7 @@
                                       <img src="./assets/img/avatar_1.jpg" alt="">
                                   </div>
                                   <div class="info_profile">
-                                      <h4>Nome</h4>
+                                      <h6>Nome</h6>
                                       <p>Message</p>
                                   </div>
                                   <div class="time justify-content-end">
@@ -120,7 +122,7 @@
                                       <img src="./assets/img/avatar_1.jpg" alt="">
                                   </div>
                                   <div class="info_profile">
-                                      <h4>Nome</h4>
+                                      <h6>Nome</h6>
                                       <p>Message</p>
                                   </div>
                                   <div class="time justify-content-end">
@@ -133,7 +135,7 @@
                                       <img src="./assets/img/avatar_1.jpg" alt="">
                                   </div>
                                   <div class="info_profile">
-                                      <h4>Nome</h4>
+                                      <h6>Nome</h6>
                                       <p>Message</p>
                                   </div>
                                   <div class="time justify-content-end">
@@ -146,7 +148,7 @@
                                       <img src="./assets/img/avatar_1.jpg" alt="">
                                   </div>
                                   <div class="info_profile">
-                                      <h4>Nome</h4>
+                                      <h6>Nome</h6>
                                       <p>Message</p>
                                   </div>
                                   <div class="time justify-content-end">
@@ -159,7 +161,7 @@
                                       <img src="./assets/img/avatar_1.jpg" alt="">
                                   </div>
                                   <div class="info_profile">
-                                      <h4>Nome</h4>
+                                      <h6>Nome</h6>
                                       <p>Message</p>
                                   </div>
                                   <div class="time justify-content-end">
@@ -182,7 +184,7 @@
                     <!-- chat activeContact (selezionata) -->
                     <div class="profile w-100 d-flex justify-content-between align-items-center">
                         <div class="info_profile">
-                            <h5 class="ps-1">{{contacts[activeContact].name}}</h5>
+                            <h6 class="ps-1">{{contacts[activeContact].name}}</h6>
                             <p class="ps-1 text-dark-emphasis">Ultimo messaggio oggi alle 12:00</p>
                         </div>
                         <div class="icon pe-3 text-secondary">
@@ -204,7 +206,7 @@
                 <!-- Messaggi inviati -->
                 <div class="mess_sent d-flex flex-column">
 
-                    <div>
+                    <div v-show="newMessage.new" >
                         {{newMessage.text}}
                     </div>
 
@@ -213,23 +215,24 @@
                 <!-- Messaggi ricevuti -->
                 <div class="received flex-column" 
                     v-for="(contact, index) in contacts[activeContact].messages" :class="contact.status == 'sent' ? ['sent', 'align-self-start'] : ['received', 'align-self-end']">
-                   <p>{{contact.message}}</p>    
+                   <p>{{contact.message}}</p> 
+                   <p>{{contact.date}}</p> 
                 </div>
                 
                 <div class="card clr_new_mess d-flex flex-row align-items-center">
                     <div class="clr_new_mess p-1 text-secondary">
                         <a href="#" class="clr_new_mess text-secondary text-decoration-none">
-                            <i class="clr_new_mess fa-regular fa-face-smile ps-1"></i>
+                            <i class="clr_new_mess fa-regular fa-face-smile ps-4"></i>
                         </a>
                     </div>
                    
                     <!-- Barra inserisci nouvo messaggio -->
                     <div class="clr_new_mess p-1 w-100">
-                        <input v-model="newMessage.text" type="text" class="form-control text-start" id="exampleFormControlInput1" placeholder="Invia un messaggio">
+                        <input @keyup.enter="addMessage" v-model="newMessage.text" :class="newMessage.text != '' ? ['text', 'align-self-start'] : ['received', 'align-self-end']" type="text" class="form-control text-start pb-2" id="exampleFormControlInput1" placeholder="Invia un messaggio">
                     </div>
-                    <div class="clr_new_mess p-1 text-secondary">
+                    <div class="clr_new_mess p-1 text-secondary ms-4">
                         <a href="#" class="clr_new_mess text-secondary text-decoration-none">
-                            <i v-on:click="inviaMess" class="clr_new_mess fa-regular fa-regular fa-paper-plane ps-1 pe-1"></i>
+                            <i @click="addMessage" class="clr_new_mess fa-regular fa-regular fa-paper-plane pe-3"></i>
                         </a>
                     </div>
                 </div>

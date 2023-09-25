@@ -36,6 +36,7 @@ createApp({
             //count: '10',
             newMessage: {
                 text: '',
+                new: false,
             },
             //user contact
             activeContact: 0,
@@ -43,9 +44,12 @@ createApp({
                 name: 'Sofia',
                 avatar: './assets/img/avatar_io.jpg',
             },
+            searchText: '',
             //contacts 
             //usare .forEach()?
             contacts: [
+
+
                 {
                     name: 'Michele',  //contacts.name
                     //Inserisco il percorso dell'img nel html
@@ -71,6 +75,10 @@ createApp({
                         }
                     ],
                 },
+
+
+
+
                 {
                     name: 'Fabio',
                     avatar: '_2',
@@ -214,19 +222,77 @@ createApp({
             ],
         }
     },
-    methods:{
+    methods: {
 
-        
 
-        
-        inviaMess(){
-            if (newMessage.text != '') {
-                console.log('condizione riuscita');
-            } else {
-                this.text = "";
-                console.log('qualcosa è andato storto');
+
+        addMessage() {
+            const message = {
+                date: new Date().toString(),
+                message: this.newMessage.text,
+                status: 'sent'
             }
-        }
+
+            this.contacts[this.activeContact].messages.push(message);
+
+            //svuota il messaggio
+            this.newMessage='';
+            
+        },
+
+       /*  addnewMess() {
+            //console.log('add mess', this.newMessage.text);
+
+            this.contacts[this.activeContact].messages.puh({
+                date: '20/03/2020 16:30:00',
+                message: 'Ciao come stai?',
+                status: 'sent',
+            });
+
+            //svuota il messaggio
+            this.newMessage='';
+
+        }, */
+
+        /* replayMessage() {
+            setTimeout(() => {
+                
+                //console.log('add mess', this.newMessage.text);
+    
+                this.contacts[this.activeContact].messages.setInterval(() => {
+                    
+                }, interval);({
+                    date: '20/03/2020 16:30:00',
+                    message: 'Ciao come stai?',
+                    status: 'sent'
+                });
+            }, ), 
+        */
+
+        searchContact(){
+            console.log('searching', this.searchText);
+            this.contacts.forEach(contact => {
+                console.log(contact.name, this.searchText);
+                //true o false in base al testo all'interno
+                if(contact.name.toLowerCase().includes(this.searchText.toLowerCase)){
+                    this.contact[this.index].visible = true;
+                    contact.visible = true;
+                } else {
+                    this.contact[this.index].visible = false;
+                    contact.visible = true;
+                }
+                
+
+
+            })
+        },
+
+
+
+        /* changeContact(index) {       // si poteva usare anche un metodo
+                                        
+            this.activeContact = index;
+        }, */
 
         /* deleteNewMessage(i) {
             console.log(this.newMessage);
@@ -240,6 +306,8 @@ createApp({
             console.log('diminuisce di 1' + direction);
             this.count--
         } */
+        
+        
     }
 }).mount('#app');
 
